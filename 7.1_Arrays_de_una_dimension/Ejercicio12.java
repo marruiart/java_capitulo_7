@@ -64,8 +64,7 @@ public class Ejercicio12 {
                 rotatedArray[i] = originalArray[i - 1];
         }
         System.out.print("\n| Valor      |");
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 10; i++)
             System.out.printf(" %10d |", rotatedArray[i]);
-        }
     }
 }
