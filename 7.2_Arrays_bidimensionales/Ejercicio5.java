@@ -15,18 +15,21 @@ public class Ejercicio5 {
     }
 
     public static void main(String[] args) {
-        int rows = 6;
-        int columns = 10;
-        int[][] num = new int[rows][columns];
-        int max = 0;
-        int min = 1000;
+        final int ROWS = 6;
+        final int COLUMNS = 10;
+        final int MAX = 1000;
+        final int MIN = 0;
+
+        int[][] num = new int[ROWS][COLUMNS];
+        int max = MIN;
+        int min = MAX;
         int[] maxPosition = new int[2];
         int[] minPosition = new int[2];
 
         int row = 0;
         int column = 0;
-        for (int i = 1; i <= 60; i++) {
-            num[row][column] = getRandomInt(0, 1000);
+        for (int i = 1; i <= ROWS * COLUMNS; i++) {
+            num[row][column] = getRandomInt(MIN, MAX);
             if (num[row][column] > max) {
                 max = num[row][column];
                 maxPosition[0] = row;
@@ -38,7 +41,7 @@ public class Ejercicio5 {
                 minPosition[1] = column;
             }
             column++;
-            if (i % 10 == 0) {
+            if (i % COLUMNS == 0) {
                 row++;
                 column = 0;
             }
@@ -47,8 +50,8 @@ public class Ejercicio5 {
         System.out.printf(
                 "El número máximo está en la fila %d y columna %d\nEl número mínimo está en la fila %d y la columna %d\n\n",
                 maxPosition[0], maxPosition[1], minPosition[0], minPosition[1]);
-        for (int i = -1; i < rows; i++) {
-            for (int j = -1; j < columns; j++) {
+        for (int i = -1; i < ROWS; i++) {
+            for (int j = -1; j < COLUMNS; j++) {
                 if (i == -1) {
                     if (j == -1)
                         System.out.printf("Array num |");

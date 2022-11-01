@@ -9,9 +9,10 @@
 
 public class Ejercicio1 {
     public static void main(String[] args) {
-        int rows = 3;
-        int columns = 6;
-        int[][] num = new int[rows][columns];
+        final int ROWS = 3;
+        final int COLUMNS = 6;
+
+        int[][] num = new int[ROWS][COLUMNS];
         num[0][0] = 0;
         num[0][1] = 30;
         num[0][2] = 2;
@@ -22,8 +23,8 @@ public class Ejercicio1 {
         num[2][3] = 9;
         num[2][5] = 11;
 
-        for (int i = -1; i < rows; i++) {
-            for (int j = -1; j < columns; j++) {
+        for (int i = -1; i < ROWS; i++) {
+            for (int j = -1; j < COLUMNS; j++) {
                 if (i == -1) {
                     if (j == -1)
                         System.out.printf("Array num |");

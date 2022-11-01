@@ -15,35 +15,38 @@ public class Ejercicio3 {
     }
 
     public static void main(String[] args) {
-        int rows = 4;
-        int columns = 5;
-        int[][] num = new int[rows][columns];
+        final int ROWS = 4;
+        final int COLUMNS = 5;
+        final int MAX = 999;
+        final int MIN = 100;
+
+        int[][] num = new int[ROWS][COLUMNS];
         int[] sumRows = { 0, 0, 0, 0 };
         int[] sumColumns = { 0, 0, 0, 0, 0 };
         int total = 0;
 
         int row = 0;
         int column = 0;
-        for (int i = 1; i <= 20; i++) {
-            num[row][column] = getRandomInt(100, 999);
+        for (int i = 1; i <= ROWS * COLUMNS; i++) {
+            num[row][column] = getRandomInt(MIN, MAX);
             column++;
-            if (i % 5 == 0) {
+            if (i % COLUMNS == 0) {
                 row++;
                 column = 0;
             }
         }
 
         System.out.println();
-        for (int i = 0; i <= rows; i++) {
-            for (int j = 0; j <= columns; j++) {
-                if (i != rows && j != columns) {
+        for (int i = 0; i <= ROWS; i++) {
+            for (int j = 0; j <= COLUMNS; j++) {
+                if (i != ROWS && j != COLUMNS) {
                     sumRows[i] += num[i][j];
                     sumColumns[j] += num[i][j];
                     total += num[i][j];
                     System.out.printf("%7d \033[97m|", num[i][j]);
-                } else if (j == columns && i != rows)
+                } else if (j == COLUMNS && i != ROWS)
                     System.out.printf("\033[96m%7d \033[97m|", sumRows[i]);
-                else if (i == rows && j != columns)
+                else if (i == ROWS && j != COLUMNS)
                     System.out.printf("\033[93m%7d \033[97m|", sumColumns[j]);
                 else
                     System.out.printf("\033[31m%7d \033[97m|", total);
