@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class Ejercicio7 {
 
     public static int getRandomInt(int min, int max) {
-        int randomInt = min + (int) (Math.random() * ((max - min) - 1));
+        int randomInt = min + (int) (Math.random() * ((max - min) + 1));
         return randomInt;
     }
 
@@ -53,13 +53,13 @@ public class Ejercicio7 {
             default:
                 minesNumber = mapSize;
         }
-        int[] treasure = getRandomCoordinate(mapSize + 1);
+        int[] treasure = getRandomCoordinate(mapSize - 1);
         int[][] mines = new int[minesNumber][2];
         boolean isRepeated;
 
         for (int mine = 0; mine < minesNumber; mine++) {
             do {
-                mines[mine] = getRandomCoordinate(mapSize + 1);
+                mines[mine] = getRandomCoordinate(mapSize - 1);
                 isRepeated = false;
                 for (int preMine = 0; preMine < mine; preMine++) {
                     isRepeated = checkEqualArrays(mines[mine], mines[preMine]) ? true : false;

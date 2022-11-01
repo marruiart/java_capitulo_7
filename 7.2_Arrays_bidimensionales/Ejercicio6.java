@@ -1,13 +1,16 @@
 /**
- * Este programa
- *
+ * Este programa rellena un array de 6 filas por 10 columnas con
+ * números enteros positivos comprendidos entre 0 y 1000 (ambos incluidos) sin
+ * que se repita ninguno. A continuación, el programa deberá dar la posición
+ * tanto del máximo como del mínimo.
+ * 
  * @author: Marina Ruiz Artacho
  **/
 
 public class Ejercicio6 {
 
     public static int getRandomInt(int min, int max) {
-        int randomInt = min + (int) (Math.random() * ((max - min) - 1));
+        int randomInt = min + (int) (Math.random() * ((max - min) + 1));
         return randomInt;
     }
 

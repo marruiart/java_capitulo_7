@@ -10,7 +10,7 @@
 public class Ejercicio5 {
 
     public static int getRandomInt(int min, int max) {
-        int randomInt = min + (int) (Math.random() * ((max - min) - 1));
+        int randomInt = min + (int) (Math.random() * ((max - min) + 1));
         return randomInt;
     }
 
